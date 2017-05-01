@@ -7,7 +7,11 @@
 	<th>Best performance in</th>
   </tr>
   <% @leaderboard.each do |board| %>
-    <tr>
+	<% if board.user_id == current_user.id %>
+    <tr class="info">
+	<% else %>
+	<tr>
+	<% end %>
 	  <td></td>
       <td><%= board.email %></td>
       <td><%= board.score %></td>

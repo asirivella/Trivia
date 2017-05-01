@@ -31,7 +31,8 @@ class ArticlesController < ApplicationController
 			if params[:id]
 				scr = 0;
 				@article = Article.find(params[:id])
-				if params[:answer] != nil && @article.answer.match(params[:answer]) && params[:answer].match(@article.answer)
+				isValid = compareAnswer(@article.answer, params[:answer])
+				if params[:answer] != nil && isValid
 					scr = 4;
 					params[:match] = true;
 				else
@@ -84,6 +85,31 @@ class ArticlesController < ApplicationController
 		@article.destroy
 		
 		redirect_to articles_path
+	end
+	
+	def compareAnswer(base, text)
+		if text != nil
+			dist = distance(base, text)
+			if dist < base.length / 2 && dist < 4
+				return true
+			else
+				return false
+			end
+		else
+			return false
+		end
+	end
+	
+	def distance(a, b)
+		a, b = a.downcase, b.downcase
+		costs = Array(0..b.length) # i == 0
+		(1..a.length).each do |i|
+			costs[0], nw = i, i - 1  # j == 0; nw is lev(i-1, j)
+			(1..b.length).each do |j|
+				costs[j], nw = [costs[j] + 1, costs[j-1] + 1, a[i-1] == b[j-1] ? nw : nw + 1].min, costs[j]
+			end
+		end
+		return costs[b.length]
 	end
  
 	private

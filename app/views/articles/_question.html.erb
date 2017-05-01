@@ -1,26 +1,21 @@
 <%= form_for :article, url: tag_path do |f| %>
 
   <% if @article != nil && @article.errors.any? %>
-    <div class="alert alert-block" id="error_explanation">
-      <h2 class="alert">
-        <% @article.errors.full_messages.each do |msg| %>
-          <%= msg %>
-        <% end %>
-      </h2>
-	  <h3>answer is <%= @article.answer %></h3>
-    </div>
+	<h3 class="alert alert-error">
+		Invalid: Answer is '<%= @article.answer %>'
+	</h3>
   <% end %>
   
   <% if params.has_key?("match") && params[:match]%>
-	<h2 class="alert alert-success">
-		Congratulations!
-	</h2>
+	<h3 class="alert alert-success">
+		Congratulations! Answer is '<%= @article.answer %>'
+	</h3>
   <% end %>
   
   <fieldset>
     <legend>Question</legend>
     <label><%= @article.question %></label>
-    <input type="text" class="input-large" name="answer" placeholder="Type something…">
+    <input type="text" class="input-large" name="answer" placeholder="Type something…" value="<%= params[:answer] %>">
   
 	<%= hidden_field_tag :id, @article.id %>
 	<label></label>
