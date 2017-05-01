@@ -1,10 +1,12 @@
 # README
 A simple trivia game with create, answer and maintain leader board for logged in Users.
 
+Deployed at Url: https://trivia-asirivella.herokuapp.com/
+
 Technologies:
   - Ruby on rails
-  - Twitter Bootstrap rails
   - PostgresSQL
+  - Twitter Bootstrap basic
   
 Instructions to run:
   - clone the github
