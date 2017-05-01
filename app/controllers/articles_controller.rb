@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
 				@article = Article.find(params[:id])
 				isValid = compareAnswer(@article.answer, params[:answer])
 				if params[:answer] != nil && isValid
-					scr = 4;
+					scr = 2;
 					params[:match] = true;
 				else
 					scr = -1;
@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
 				else
 					leaderboard.score = leaderboard.score + scr
 					leaderboard.update_attribute(:score, leaderboard.score + scr)
-				end
+				end				
 			end
 		end
 	end
