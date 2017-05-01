@@ -1,5 +1,3 @@
-@import "twitter/bootstrap/bootstrap";
-
 body { padding-top: 60px; }
 
 .notice{
@@ -14,5 +12,3 @@ h1 h2 h3 h4 h5 p a th td{
 	padding-right: 10px;
 	font-size: 12px;
 }
-
-@import "twitter/bootstrap/responsive";
