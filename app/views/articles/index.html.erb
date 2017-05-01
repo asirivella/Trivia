@@ -1,0 +1,36 @@
+
+<h2>Choose a Category</h2>
+  
+<%= link_to 'New Question', new_article_path %>
+
+<br/>
+<div id='tag_cloud' style="padding-top:10px;">
+  <ul>
+  <% tag_cloud Article.tag_counts, %w{s m l} do |tag, css_class| %>
+    <li><%= link_to tag.name, tag_path(tag.name), class: css_class %></li>
+  <% end %>
+  </ul>
+</div>
+
+
+<!--
+<table class="table table-hover">
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+	<th>tag_list</th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.question %></td>
+      <td><%= article.answer %></td>
+	  <td><%= article.tag_list %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+-->

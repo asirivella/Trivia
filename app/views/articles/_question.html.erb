@@ -1,0 +1,42 @@
+<%= form_for :article, url: tag_path do |f| %>
+
+  <% if @article != nil && @article.errors.any? %>
+    <div class="error" id="error_explanation">
+      <h2 class="text-error">
+        <% @article.errors.full_messages.each do |msg| %>
+          <%= msg %>
+        <% end %>
+      </h2>
+	  <h3>answer is <%= @article.answer %></h3>
+    </div>
+  <% end %>
+  
+  <% if params.has_key?("match") && params[:match]%>
+	<h2 class="text-success">
+		Congratulations!
+	</h2>
+  <% end %>
+  
+  <fieldset>
+    <legend>Question</legend>
+    <label><%= @article.question %></label>
+    <input type="text" class="input-large" name="answer" placeholder="Type something…">
+  
+	<%= hidden_field_tag :id, @article.id %>
+	<label></label>
+  
+	<% if !params.has_key?("match")%>
+		<button type="submit" class="btn">Submit</button>
+	<% end %>
+	<label></label>
+	
+	<span class="help-block">
+		<strong> Tags: </strong>
+		<%= raw @article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+	</span>
+ 
+<% end %>
+
+<%= link_to 'Next Question', tag_path %>
+
+<%= link_to 'Back', articles_path %>
