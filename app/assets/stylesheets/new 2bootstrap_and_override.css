@@ -18,14 +18,14 @@ table.leaderboard td:first-child:before
 	text-transform: capitalize;
 }
 
-#tag_cloud .1{
+#tag_cloud .l{
 	font-size: 1.8em;
 }
 
-#tag_cloud .2{
+#tag_cloud .m{
 	font-size: 1.4em;
 }
 
-#tag_cloud .3{
+#tag_cloud .s{
 	font-size: 1.4em;
 }
