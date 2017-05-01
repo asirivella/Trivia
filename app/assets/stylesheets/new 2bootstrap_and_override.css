@@ -1,4 +1,6 @@
-body { padding-top: 60px; }
+body { 
+
+}
 
 .notice{
 }
@@ -9,6 +11,4 @@ h1 h2 h3 h4 h5 p a th td{
 
 .navbar-login{
 	float: right;
-	padding-right: 10px;
-	font-size: 12px;
 }

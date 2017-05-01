@@ -13,34 +13,43 @@
   </head>
 
   <body>
-    <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-	  <div class="navbar-login">
-			<% if user_signed_in? %>
-				Signed in as <%= current_user.email %>. Not you? | 
-				<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-			<% else %>
-				<%= link_to "Sign Up", new_user_registration_path %> or 
-				<%= link_to "Login", new_user_session_path %>
-			<% end %>
-	  </div>
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#">Trivia</a>
-        <div class="nav-collapse">
-          <ul class="nav">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Trivia", articles_path %></li>
-            <li><%= link_to "Leader Board", board_path %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<div class="navbar-login">
+					<small>
+					<% if user_signed_in? %>
+						Signed in as <%= current_user.email %> |  
+						<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+					<% else %>
+						<%= link_to "Sign Up", new_user_registration_path %> or 
+						<%= link_to "Login", new_user_session_path %>
+					<% end %>
+					</small>
+				</div>
+ 
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+ 
+				<!-- Be sure to leave the brand out there if you want it shown -->
+				<a class="brand" href="#">Trivia</a>
+ 
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<!-- .nav, .navbar-search, .navbar-form, etc -->
+					<ul class="nav">
+						<li><%= link_to "Home", root_path %></li>
+						<li><%= link_to "Trivia", articles_path %></li>
+						<li><%= link_to "Leader Board", board_path %></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
   
 	<% if notice %> <p class="alert"><%= notice %></p> <% end %>
     <% if alert  %> <p class="alert"><%= alert %></p> <% end %>
