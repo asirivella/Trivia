@@ -1,8 +1,8 @@
 <%= form_for :article, url: tag_path do |f| %>
 
   <% if @article != nil && @article.errors.any? %>
-    <div class="error" id="error_explanation">
-      <h2 class="text-error">
+    <div class="alert alert-block" id="error_explanation">
+      <h2 class="alert">
         <% @article.errors.full_messages.each do |msg| %>
           <%= msg %>
         <% end %>
@@ -12,7 +12,7 @@
   <% end %>
   
   <% if params.has_key?("match") && params[:match]%>
-	<h2 class="text-success">
+	<h2 class="alert alert-success">
 		Congratulations!
 	</h2>
   <% end %>

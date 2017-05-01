@@ -1,14 +1,18 @@
-body { 
-
+body
+{
+    counter-reset: Serial;           /* Set the Serial counter to 0 */
 }
 
-.notice{
+#tag_cloud li{
+	text-transform: capitalize;
 }
 
 h1 h2 h3 h4 h5 p a th td{
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.navbar-login{
-	float: right;
+table.leaderboard td:first-child:before
+{
+  counter-increment: Serial;      /* Increment the Serial counter */
+  content: counter(Serial); /* Display the counter */
 }

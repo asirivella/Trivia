@@ -16,7 +16,7 @@
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container">
-				<div class="navbar-login">
+				<div class="pull-right">
 					<small>
 					<% if user_signed_in? %>
 						Signed in as <%= current_user.email %> |  
@@ -51,8 +51,8 @@
 		</div>
 	</div>
   
-	<% if notice %> <p class="alert"><%= notice %></p> <% end %>
-    <% if alert  %> <p class="alert"><%= alert %></p> <% end %>
+	<% if notice %> <p class="alert alert-success"><%= notice %></p> <% end %>
+    <% if alert  %> <p class="alert alert-block"><%= alert %></p> <% end %>
 	
 	<div class="container">
     <div class="row">
