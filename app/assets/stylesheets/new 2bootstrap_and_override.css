@@ -12,6 +12,10 @@ table.leaderboard td:first-child:before
   counter-increment: Serial;      /* Increment the Serial counter */
   content: counter(Serial); /* Display the counter */
 }
+.footer{
+	padding-top: 30px;
+	font-size: 9px;
+}
 
 #tag_cloud li{
 	line-height: 30px;
