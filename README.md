@@ -14,6 +14,11 @@ Instructions to run:
   - run "rake db:migrate" to get the database installed.
   - run "rails s" to start server. If found any error check on stackoverflow.
  
+ Notes:
+  - The app support multiple category tagging and trivia page styling differenciation of the number of questions.
+  - The answer matching is done using string distance between words (is less than 4) with filtering some stop words like 'a', 'the',etc.
+  - The app doesn't show the question which are created by himself.
+  
  Useful links:
   - http://guides.rubyonrails.org/
   - http://railscasts.com/episodes/382-tagging?view=asciicast
