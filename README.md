@@ -9,7 +9,7 @@ Technologies:
   - Twitter Bootstrap basic
   
 Instructions to run:
-  - clone the github
+  - clone the file from github
   - run "bundle install" to install necessary installation (add --without production for development)
   - run "rake db:migrate" to get the database installed.
   - run "rails s" to start server. If found any error check on stackoverflow.
