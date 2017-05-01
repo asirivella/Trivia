@@ -101,7 +101,11 @@ class ArticlesController < ApplicationController
 	end
 	
 	def distance(a, b)
-		a, b = a.downcase, b.downcase
+		# To filter out obvious words (stop words) just some of them
+		remove_words  = ["a" , "the", "his", "her", "at", "of", "to", "on", "or"]
+		a = a.downcase.split.delete_if{|x| remove_words.include?(x)}.join(' ')
+		b = b.downcase.split.delete_if{|x| remove_words.include?(x)}.join(' ')
+		
 		costs = Array(0..b.length) # i == 0
 		(1..a.length).each do |i|
 			costs[0], nw = i, i - 1  # j == 0; nw is lev(i-1, j)
