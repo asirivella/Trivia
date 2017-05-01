@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get 'category/:tag', to: 'articles#show', as: :tag
   post 'category/:tag', to: 'articles#answer', as: :answer
   #forcibly render 200 for missing link
-  get '/assets/twitter/bootstrap/bootstrap', to: proc { [200, {}, ['']] }
+  get "*path", to: redirect('/')
 end
