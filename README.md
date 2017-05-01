@@ -1,24 +1,19 @@
 # README
+A simple trivia game with create, answer and maintain leader board for logged in Users.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Technologies:
+  - Ruby on rails
+  - Twitter Bootstrap rails
+  - PostgresSQL
+  
+Instructions to run:
+  - clone the github
+  - run "bundle install" to install necessary installation (add --without production for development)
+  - run "rake db:migrate" to get the database installed.
+  - run "rails s" to start server. If found any error check on stackoverflow.
+ 
+ Useful links:
+  - http://guides.rubyonrails.org/
+  - http://railscasts.com/episodes/382-tagging?view=asciicast
+  - http://railscasts.com/episodes/328-twitter-bootstrap-basics
+  - http://docs.railsbridge.org/intro-to-rails/deploying_to_heroku
