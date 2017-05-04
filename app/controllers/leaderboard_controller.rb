@@ -19,7 +19,7 @@ class LeaderboardController < ApplicationController
 				end
 			end
 		end
-		@boardHash.sort_by { |k, v| v[:score] }.reverse
 		@leaderboard = @boardHash.values
+		@leaderboard = @leaderboard.sort_by! { |x| x.score}.reverse
 	end
 end
